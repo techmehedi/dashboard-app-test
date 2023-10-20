@@ -1,0 +1,10 @@
+.Brewery {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .Brewery h3 {
+    margin-top: 0;
+  }
+  
