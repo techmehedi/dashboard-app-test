@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Dashboard from './Dashboard';
-import './App.css';
+import BreweryDetail from './BreweryDetail';
 
 function App() {
   const [breweries, setBreweries] = useState([]);
@@ -18,15 +19,19 @@ function App() {
 
   return (
     <div className="App">
-      <Dashboard 
-        breweries={breweries} 
-        search={search} 
-        setSearch={setSearch} 
-        filter={filter} 
-        setFilter={setFilter}
-      />
+      <Routes>
+        <Route path="/" element={<Dashboard 
+          breweries={breweries} 
+          search={search} 
+          setSearch={setSearch} 
+          filter={filter} 
+          setFilter={setFilter}
+        />} />
+        <Route path="/brewery/:id" element={<BreweryDetail />} />
+      </Routes>
     </div>
   );
+
 }
 
 export default App;
